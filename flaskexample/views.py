@@ -3,7 +3,8 @@ Created on Mon Jan 28 16:24:35 2019
 
 @author: dbm
 """
-
+import pyLDAvis
+import os
 from flaskexample import app
 from flask import Flask, request, render_template, jsonify
 from gensim.summarization import summarize, keywords
@@ -14,7 +15,7 @@ from nltk.stem import WordNetLemmatizer
 from nltk import sent_tokenize
 # Init the Wordnet Lemmatizer
 wnl = WordNetLemmatizer()
-
+#port = int(os.environ.get('PORT', 5000))
 
 #from my_module import model
 
