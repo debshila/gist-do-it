@@ -46,8 +46,8 @@ def get_text():
 #def show_lda():
 #    return render_template('acl_optimal_lda_35.html')
     #return flask.send_file('/acl_optimal_lda_35.html')
-
-@app.route('/acl_optimal_lda_35.html')
+#acl_optimal_lda_35.html
+@app.route('/topics')
 def show_lda():
     return render_template('acl_optimal_lda_35.html')
 

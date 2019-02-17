@@ -112,7 +112,6 @@
                       <p id="gist-card"> 
                           </p>
                     </div>
-                  <iframe id = "lda-plot" src=  "{{ url_for('show_lda') }}"></iframe> 
 
                     <!-- 
                    "acl_optimal_lda_35.html"
@@ -127,8 +126,7 @@
               </div>
               </div>
               <!-- End Tabs with icons on Card -->
-
-
+                  <iframe class = "myIframe", id = "lda-plot" src=  "{{ url_for('show_lda') }}" ></iframe> 
 
           </div>
         </div>
@@ -203,6 +201,17 @@
   font-size: 16px;
   resize: none;
   }
+ #lda-plot {
+  width: 110%;
+  height: 650px;
+  padding: 24px 30px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  resize: none;
+  }
+
+  
 </style>
  
    <!--   Core JS Files   -->
