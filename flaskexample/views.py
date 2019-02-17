@@ -26,7 +26,7 @@ wnl = WordNetLemmatizer()
 @app.route('/index')
 def index():
   product = {'name': 'Gist do it!'}  
-  return render_template("index2.html", title = 'Home', user = product)
+  return render_template("index.html", title = 'Home', user = product)
 
 @app.route('/', methods=["POST"])
 def get_text():
