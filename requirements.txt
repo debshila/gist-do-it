@@ -1,0 +1,9 @@
+flask
+gensim
+nltk
+pandas
+numpy
+pyLDAvis
+pickle
+requests
+
