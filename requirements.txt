@@ -6,3 +6,4 @@ numpy
 pyLDAvis
 requests
 validators
+bs4
