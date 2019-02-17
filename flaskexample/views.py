@@ -15,7 +15,6 @@ from nltk.stem import WordNetLemmatizer
 from nltk import sent_tokenize
 # Init the Wordnet Lemmatizer
 wnl = WordNetLemmatizer()
-#port = int(os.environ.get('PORT', 5000))
 
 #from my_module import model
 
