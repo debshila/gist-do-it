@@ -3,7 +3,7 @@ Created on Mon Jan 28 16:24:35 2019
 
 @author: dbm
 """
-import pyLDAvis
+#import pyLDAvis
 import os
 from flaskexample import app
 from flask import Flask, request, render_template, jsonify
@@ -22,7 +22,7 @@ wnl = WordNetLemmatizer()
 @app.route('/index')
 def index():
   product = {'name': 'Gist do it!'}  
-  return render_template("index.html", title = 'Home', user = product)
+  return render_template("index2.html", title = 'Home', user = product)
 
 #@app.route('/', methods=['POST'])
 #def my_form_post():
@@ -42,11 +42,6 @@ def get_text():
     #result = model.predict(text)
     return jsonify({'Title':title, 'Gist': result})
 
-#@app.route('/acl_optimal_lda_35.html', methods=["POST"])
-#def show_lda():
-#    return render_template('acl_optimal_lda_35.html')
-    #return flask.send_file('/acl_optimal_lda_35.html')
-#acl_optimal_lda_35.html
 @app.route('/topics')
 def show_lda():
     return render_template('acl_optimal_lda_35.html')

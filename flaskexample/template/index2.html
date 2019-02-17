@@ -19,22 +19,6 @@
   <link href="./static/assets/demo/demo.css" rel="stylesheet" />
 </head>
 <body>
-<!--
-<body class="index-page sidebar-collapse">
-  <nav class="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" color-on-scroll="100" id="sectionsNav">
-    <div class="container">
-      <div class="navbar-translate"> 
-
-  <div class="page-header header-filter clear-filter purple-filter" data-parallax="true" style="background-image: url('./static/assets/img/bg2.jpg');">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8 ml-auto mr-auto">
-          <div class="brand">
-            <h1>{{user.name}}</h1>
-            <h3>A multilevel multipurpose summary generator.</h3>
-
-
--->
 
   <div class="page-header header-filter clear-filter purple-filter" data-parallax="true" style="background-image: url('./static/assets/img/paper_work.jpg');">
     <div class="container">
@@ -54,78 +38,18 @@
         <div class="title">
                 <form method="POST"> 
                   <textarea id="entry-card" name="textbox" rows=10 placeholder="Enter text here"></textarea>
-       <!-- 
-       <div id="sliders">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="title">
-                <h4>Adjust summary length</h3>
-              </div>
-              <div id="sliderRegular" class="slider"></div>
-            </div>
-    -->        
- 
-                  <button id="submit-button" class="btn btn-primary btn-lg" type="submit" name="submit"><b>Make a Gist<b></button>
-  <!--               <button id="lda-submit-button" class="btn btn-primary btn-lg" type="submit" name="plot-submit"><b>Show topics<b></button> -->
 
+                  <button id="submit-button" class="btn btn-primary btn-lg" type="submit" name="submit"><b>Make a Gist<b></button>
                 </form>
 <br><br><br>
               <!-- Tabs with icons on Card -->
               <div id ="gist-area">
-<!--              
-              <div class="card card-nav-tabs">
-                <div class="card-header card-header-primary">
-                  <!-- colors: "header-primary", "header-info", "header-success", "header-warning", "header-danger" -->
-                  <div class="nav-tabs-navigation">
-                    <div class="nav-tabs-wrapper">
-                      <ul class="nav nav-tabs" data-tabs="tabs">
-         
-                        <li class="nav-item">
-                          <a class="nav-link"  data-toggle="tab">
-                          <i> Summary </i>
-                            <!--<i class="material-icons">chat</i>-->
-                            <p id="title"> Summary </p>
-                          </a>
-                        </li>
-                      
-                      
-                        
-
-                        
-                        <!-- 
-                        <li class="nav-item">
-                          <a class="nav-link active" href="#profile" data-toggle="tab">
-                            <i class="material-icons">face</i> Profile
-                          </a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="#settings" data-toggle="tab">
-                            <i class="material-icons">build</i> Settings
-                          </a>
-                        </li>
-                      
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                </div>
-                
- -->               
                 <div class="card-body ">
                   <div class="tab-content text-center">
                     <div class="tab-pane active" id="profile">
                       <p id="gist-card"> 
                           </p>
                     </div>
-
-                    <!-- 
-                   "acl_optimal_lda_35.html"
-                    <div class="tab-pane" id="messages">
-                      <p> I think that&#x2019;s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at. I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that&#x2019;s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at.</p>
-                    </div>
-                    <div class="tab-pane" id="settings">
-                      <p>I think that&#x2019;s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at. So when you get something that has the name Kanye West on it, it&#x2019;s supposed to be pushing the furthest possibilities. I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus.</p>
-                    </div> -->
                   </div>
                 </div>
               </div>
@@ -157,7 +81,7 @@
      .then(response => response.json())
      .then(json => {
           document.getElementById('gist-area').style.visibility = "visible" 
-        document.getElementById('gist-card').textContent = 'Summary: ' +json.Gist.join(' ')
+        document.getElementById('gist-card').textContent = 'Summary: ' + json.Gist.join(' ')
      })
  })
 /*  const plot_button = document.getElementById('lda-submit-button')
@@ -225,8 +149,6 @@
   <script src="./static/assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
   <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
   <script src="./static/assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
-  <!--  Google Maps Plugin    
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>-->
   <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
   <script src="./static/assets/js/material-kit.js?v=2.0.5" type="text/javascript"></script>
   <script>
