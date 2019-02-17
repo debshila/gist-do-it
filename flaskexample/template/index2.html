@@ -58,8 +58,8 @@
                     <p class= "gist-title">
                         <br>Summary
                     </p>
-                      <p  id="gist-card"> 
-                          </p>
+                      <p id = "num-words"></p>
+                      <p  id="gist-card"></p>
                     </div>
                   </div>
                 </div>
@@ -95,8 +95,11 @@
          .then(response => response.json())
          .then(json => {
               document.getElementById('gist-area').style.visibility = "visible" 
+              document.getElementById('gist-area').scrollIntoView()
               document.getElementById('lda-vis').style.visibility = "visible" 
               document.getElementById('gist-card').textContent = json.Gist.join(' ')
+              document.getElementById('num-words').textContent = 'Number of words in original vs. summary document: '+ json.orig_wc 
+                                                                  + ' vs ' + json.summary_wc
      })
  })
 /*  const plot_button = document.getElementById('lda-submit-button')
