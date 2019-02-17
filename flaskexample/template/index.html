@@ -66,6 +66,8 @@
     -->        
  
                   <button id="submit-button" class="btn btn-primary btn-lg" type="submit" name="submit"><b>Make a Gist<b></button>
+                 <button id="lda-submit-button" class="btn btn-primary btn-lg" type="submit" name="plot-submit"><b>Show topics<b></button>
+
                 </form>
 <br><br><br>
               <!-- Tabs with icons on Card -->
@@ -76,7 +78,7 @@
                   <div class="nav-tabs-navigation">
                     <div class="nav-tabs-wrapper">
                       <ul class="nav nav-tabs" data-tabs="tabs">
-                                               
+         
                         <li class="nav-item">
                           <a class="nav-link"  data-toggle="tab">
                             <!--<i class="material-icons">chat</i>-->
@@ -107,9 +109,13 @@
                 <div class="card-body ">
                   <div class="tab-content text-center">
                     <div class="tab-pane active" id="profile">
-                      <p id="gist-card"> </p>
+                      <p id="gist-card"> 
+                          </p>
                     </div>
-                    <!--
+                  <iframe id = "lda-plot" src=  "{{ url_for('show_lda') }}"></iframe> 
+
+                    <!-- 
+                   "acl_optimal_lda_35.html"
                     <div class="tab-pane" id="messages">
                       <p> I think that&#x2019;s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at. I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that&#x2019;s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at.</p>
                     </div>
@@ -130,9 +136,10 @@
     </div>
   </div>
  
- 
+
  <script>
   document.getElementById('gist-area').style.visibility = "hidden"
+  document.getElementById('lda-submit-button').style.visibility = "hidden"
 
  const button = document.getElementById('submit-button')
  button.addEventListener('click', e => {
@@ -150,9 +157,14 @@
           document.getElementById('gist-area').style.visibility = "visible" 
         document.getElementById('title').textContent = json.Title.join(' ')
         document.getElementById('gist-card').textContent = json.Gist.join(' ')
+        document.getElementById('lda-submit-button').style.visibility = "visible"
      })
  })
- 
+  const plot_button = document.getElementById('lda-submit-button')
+    plot_button.addEventListener('click', e => {
+        const plot = document.getElementById('lda-plot')
+        plot.style.visibility = "visible"
+    })
  
  </script>
  
@@ -202,8 +214,8 @@
   <script src="./static/assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
   <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
   <script src="./static/assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
-  <!--  Google Maps Plugin    -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+  <!--  Google Maps Plugin    
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>-->
   <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
   <script src="./static/assets/js/material-kit.js?v=2.0.5" type="text/javascript"></script>
   <script>
@@ -225,59 +237,6 @@
     }
 
 
-    $(document).ready(function() {
-
-      $('#facebook').sharrre({
-        share: {
-          facebook: true
-        },
-        enableHover: false,
-        enableTracking: false,
-        enableCounter: false,
-        click: function(api, options) {
-          api.simulateClick();
-          api.openPopup('facebook');
-        },
-        template: '<i class="fab fa-facebook-f"></i> Facebook',
-        url: 'https://demos.creative-tim.com/material-kit/index.html'
-      });
-
-      $('#googlePlus').sharrre({
-        share: {
-          googlePlus: true
-        },
-        enableCounter: false,
-        enableHover: false,
-        enableTracking: true,
-        click: function(api, options) {
-          api.simulateClick();
-          api.openPopup('googlePlus');
-        },
-        template: '<i class="fab fa-google-plus"></i> Google',
-        url: 'https://demos.creative-tim.com/material-kit/index.html'
-      });
-
-      $('#twitter').sharrre({
-        share: {
-          twitter: true
-        },
-        enableHover: false,
-        enableTracking: false,
-        enableCounter: false,
-        buttons: {
-          twitter: {
-            via: 'CreativeTim'
-          }
-        },
-        click: function(api, options) {
-          api.simulateClick();
-          api.openPopup('twitter');
-        },
-        template: '<i class="fab fa-twitter"></i> Twitter',
-        url: 'https://demos.creative-tim.com/material-kit/index.html'
-      });
-
-    });
   </script>
 </body>
 

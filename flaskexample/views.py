@@ -42,10 +42,20 @@ def get_text():
     #result = model.predict(text)
     return jsonify({'Title':title, 'Gist': result})
 
-@app.route('/', methods=["POST"])
-def script_output():
-    output = summarize_text_extractive('./script')
-    return output
+#@app.route('/acl_optimal_lda_35.html', methods=["POST"])
+#def show_lda():
+#    return render_template('acl_optimal_lda_35.html')
+    #return flask.send_file('/acl_optimal_lda_35.html')
+
+@app.route('/acl_optimal_lda_35.html')
+def show_lda():
+    return render_template('acl_optimal_lda_35.html')
+
+
+#@app.route('/', methods=["POST"])
+#def script_output():
+#    output = summarize_text_extractive('./script')
+#    return output
 
     
 
