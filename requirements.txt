@@ -4,6 +4,5 @@ nltk
 pandas
 numpy
 pyLDAvis
-pickle
 requests
 
