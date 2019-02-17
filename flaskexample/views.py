@@ -16,7 +16,6 @@ from nltk import sent_tokenize
 # Init the Wordnet Lemmatizer
 wnl = WordNetLemmatizer()
 
-#from my_module import model
 
 @app.route('/')
 @app.route('/index')
@@ -24,37 +23,14 @@ def index():
   product = {'name': 'Gist do it!'}  
   return render_template("index2.html", title = 'Home', user = product)
 
-#@app.route('/', methods=['POST'])
-#def my_form_post():
-#    text = request.form['text']
-#    processed_text = text.lower()
-#    return processed_text
-#'/predict', 
 @app.route('/', methods=["POST"])
 def get_text():
-    # text = request.form.get('textbox')
     text = request.get_json(force=True)['text']
-    #text =  mystring.replace('\n', ' ')
-#    text = sent_tokenize(text)
     result = summarize(text, ratio = 0.20, split = True)
     title = summarize(text, ratio = 0.08, split = True) #
 
-    #result = model.predict(text)
     return jsonify({'Title':title, 'Gist': result})
 
 @app.route('/topics')
 def show_lda():
     return render_template('acl_optimal_lda_35.html')
-
-
-#@app.route('/', methods=["POST"])
-#def script_output():
-#    output = summarize_text_extractive('./script')
-#    return output
-
-    
-
-#def predict(txt):
-#    input_text =  ''
-#    result = model.predict('model prediction')
-#    return result
