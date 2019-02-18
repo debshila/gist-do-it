@@ -8,7 +8,6 @@ from flaskexample import app
 import pandas as pd
 import numpy as np
 import nltk
-nltk.download('punkt')
 from flask import Flask, request, render_template, jsonify
 from gensim.summarization import summarize, keywords
 import gensim as gs
