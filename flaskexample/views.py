@@ -6,8 +6,9 @@ Created on Mon Jan 28 16:24:35 2019
 #import pyLDAvis
 from flaskexample import app
 import pandas as pd
-nltk.download('punkt')
 import numpy as np
+import nltk
+nltk.download('punkt')
 from flask import Flask, request, render_template, jsonify
 from gensim.summarization import summarize, keywords
 import gensim as gs
