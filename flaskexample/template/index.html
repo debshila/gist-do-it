@@ -63,7 +63,7 @@
               </div>
             <div id = "lda-vis">
               <!-- LDA visualization -->
-              <p class = "gist-title">Hover mouse over each circle to interact with the underlying themes within similar privacy policy documents and see keywords within them. </p>
+              <p class = "gist-title">Hover mouse over each circle to see keywords underlying themes within similar privacy policy documents. </p>
                   <iframe id = "lda-plot" src=  "{{ url_for('show_lda') }}" ></iframe> 
             <br>
           </div>
@@ -95,7 +95,7 @@
               document.getElementById('gist-area').scrollIntoView()
               document.getElementById('lda-vis').style.visibility = "visible" 
               document.getElementById('gist-card').textContent = json.Gist.join(' ')
-              document.getElementById('num-words').textContent = 'Number of words in original vs. summary document: '+ json.orig_wc 
+              document.getElementById('num-words').textContent = 'Number of words in original document vs. gist: '+ json.orig_wc 
                                                                   + ' vs ' + json.summary_wc
      })
  })
@@ -109,6 +109,7 @@
       resize: none;    
     }
     .gist-title{
+      text-align: center;
       font-size: 1.25em;
       font-weight: bold;
       font-family: 'myFont', Roboto, Arial, Helvetica, sans-serif;    
