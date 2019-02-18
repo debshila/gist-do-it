@@ -7,5 +7,4 @@ pyLDAvis
 requests
 validators
 bs4
-os
 logging
