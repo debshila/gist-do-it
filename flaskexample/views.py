@@ -67,4 +67,4 @@ def get_text():
 
 @app.route('/topics')
 def show_lda():
-    return render_template('acl_optimal_lda_4top_fulldoc.html')
+    return render_template('acl_optimal_lda_16top_fulldoc_tsne.html')
