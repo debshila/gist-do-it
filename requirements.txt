@@ -7,3 +7,4 @@ pyLDAvis
 requests
 validators
 bs4
+spacy
