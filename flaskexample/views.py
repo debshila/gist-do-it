@@ -26,7 +26,7 @@ from bs4 import BeautifulSoup
 import requests
 import validators
 import re
-from gensim.models import CoherenceModel, LdaModel
+#from gensim.models import CoherenceModel, LdaModel
 
 # Init the Wordnet Lemmatizer
 wnl = WordNetLemmatizer()
