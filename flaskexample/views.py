@@ -45,9 +45,9 @@ def get_text():
     else:
         text_1 = text
     #Preprocess text
-    tmp = sent_tokenize(''.join(text_1))
+    tmp = sent_tokenize(' '.join(text_1))
     word_count_orig = len(simple_preprocess(' '.join(tmp)))
-    pat = '[^a-zA-z0-9.?! ]+'
+    pat = '[^a-zA-z0-9.?!, ]+'
     #Keep only sentences
     tmp_sent = [re.sub(pat, '', i).rstrip() for i in tmp]
     tmp_sent = [
