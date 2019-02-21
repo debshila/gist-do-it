@@ -3,15 +3,11 @@ Created on Mon Jan 28 16:24:35 2019
 
 @author: dbm
 """
-#import pyLDAvis
 from flaskexample import app
 
-#import topic_model_utils
-#import preproc_utils
 import pandas as pd
 import numpy as np
 import nltk
-import spacy
 nltk.download('punkt')
 from flask import Flask, request, render_template, jsonify
 from gensim.summarization import summarize, keywords
@@ -26,12 +22,9 @@ from bs4 import BeautifulSoup
 import requests
 import validators
 import re
-#from gensim.models import CoherenceModel, LdaModel
 
 # Init the Wordnet Lemmatizer
 wnl = WordNetLemmatizer()
-#lda_file = datapath("optimal_LDA_model_acl_train_16top_fulldoc_updated")
-#lda = LdaModel.load(lda_file)
 
 @app.route('/')
 @app.route('/index')
@@ -67,16 +60,6 @@ def get_text():
     # Summarize text
     result = summarize(txt, ratio = return_ratio, split = True)
     title = summarize(txt, word_count = 10, split = True) #
-    # Updating pretrained LDA model with new documents
-#    new_doc = tokenize(pd.Series(txt), stop_words=stop_words, frequent_words=frequent_words)
-#    new_doc= sum(new_doc,[])
-#    new_doc_bow = id2word.doc2bow(new_doc)
-#    new_doc_top_prob_dist = optimal_model[new_doc_bow]
-#    # Sort topic probability distribution for new document
-#    new_doc_top_prob_dist_df = pd.DataFrame([{'topic': i[0],'prob': i[1]} for i in new_doc_top_prob_dist]).sort_values(
-#    by=['prob'], ascending=False)
-#
-#    lda.update(other_corpus)
     # count words
     word_count_summary =  len(simple_preprocess(' '.join(result)))
 
