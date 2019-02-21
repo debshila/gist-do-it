@@ -36,7 +36,7 @@ def index():
 def get_text():
     text = request.get_json(force=True)['text']
     filt_len = 6
-    return_ratio = 0.05
+    return_ratio = 0.03
     if validators.url(text):
         r  = requests.get(text)#'https://machinebox.io/privacy'https://www.manulife.com/en/privacy-policy/privacy-statement.html
         data = r.text
