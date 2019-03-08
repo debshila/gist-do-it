@@ -10,7 +10,7 @@ import numpy as np
 import nltk
 nltk.download('punkt')
 from flask import Flask, request, render_template, jsonify
-from gensim.summarization import summarize, keywords
+from gensim.summarization import summarize, keywords #https://radimrehurek.com/gensim/summarization/summariser.html
 import gensim as gs
 from gensim.test.utils import datapath
 from gensim.parsing.preprocessing import remove_stopwords
@@ -45,7 +45,7 @@ def get_text():
     else:
         text_1 = text
     #Preprocess text
-    tmp = sent_tokenize(' '.join(text_1))
+    tmp = sent_tokenize(''.join(text_1))
     word_count_orig = len(simple_preprocess(' '.join(tmp)))
     pat = '[^a-zA-z0-9.?!, ]+'
     #Keep only sentences
